@@ -16,8 +16,8 @@ repositories {
 dependencies {
     compileOnly("io.github.yaemonilc.reze:Core")
 
-    // Source: https://mvnrepository.com/artifact/ai.koog/koog-agents
-    implementation("ai.koog:koog-agents:0.6.0")
+    // Source: https://mvnrepository.com/artifact/com.openai/openai-java
+    implementation("com.openai:openai-java:4.15.0")
 
     testImplementation(kotlin("test"))
 }
@@ -26,15 +26,22 @@ kotlin {
     jvmToolchain(21)
 }
 
-tasks.register<Copy>("runPlugin") {
+tasks.register<Copy>("compilePlugin") {
     dependsOn("shadowJar")
 
-    tasks.named<ShadowJar>("shadowJar").apply {
-        from(get().archiveFile.get())
-        into("/Reze/plugins")
-    }
+    val shadowJar = tasks.named<ShadowJar>("shadowJar")
+    from(shadowJar.get().archiveFile.get())
+    into("/Reze/plugins")
+}
 
-    finalizedBy(gradle.includedBuild("Reze").task(":Launcher:run"))
+tasks.register("runReze") {
+    dependsOn(gradle.includedBuild("Reze").task(":Launcher:run"))
+}
+
+tasks.register("runPlugin") {
+    dependsOn("compilePlugin")
+
+    finalizedBy("runReze")
 }
 
 tasks.test {
