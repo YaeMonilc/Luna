@@ -17,7 +17,6 @@ Array<Action>
 *常量
 NAME: #NAME#
 ROLE: #ROLE#
-HISTORY: #HISTORY#
 REJECTED: #REJECTED#
 
 *核心指令
