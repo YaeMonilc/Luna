@@ -1,0 +1,2 @@
+Evaluate:
+    action: 'ignore' | 'reject' | 'approved'

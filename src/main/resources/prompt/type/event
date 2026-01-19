@@ -1,0 +1,36 @@
+GroupMessageEvent:
+    selfId: Long
+    messageType: 'group'
+    subType: SubType = 'normal'
+    messageId: Long
+    userId: Long
+    message: List<Segment>
+    rawMessage: String
+    font: Int
+    groupId: Long
+    sender: GroupSender
+
+GroupTempSourceMessageEvent:
+    selfId: Long
+    messageType: 'private'
+    subType: 'friend'
+    messageId: Long
+    userId: Long
+    message: List<Segment>
+    rawMessage: String
+    font: Int
+    targetId: Long | null
+    tempSource: Long | null
+    sender: GroupTempSourceSender
+
+PrivateMessageEvent:
+    selfId: Long
+    messageType: 'private'
+    subType: 'friend'
+    messageId: Long
+    userId: Long
+    message: List<Segment>
+    rawMessage: String
+    font: Int
+    targetId: Long | null
+    sender: FriendSender

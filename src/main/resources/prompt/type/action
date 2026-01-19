@@ -1,0 +1,40 @@
+FriendPoke:
+    action: 'friend_poke'
+    params:
+        userId: Long
+
+GroupPoke:
+    action: 'group_poke'
+    params:
+        groupId: Long
+        userId: Long
+
+SendGroupMsg:
+    action: 'send_group_msg'
+    params:
+        groupId: Long
+        message: List<Segment>
+
+SendPrivateMsg:
+    action: 'send_private_msg'
+    params:
+        userId: Long
+        message: List<Segment>
+
+SendGroupSign:
+    action: 'send_group_sign'
+    params:
+        groupId: Long
+
+SendLike:
+    action: 'send_like'
+    params:
+        userId: Long
+        times: Int
+
+SendPoke:
+    action: 'send_poke'
+    params:
+        userId: Long | null
+        groupId: Long | null
+        targetId: Int

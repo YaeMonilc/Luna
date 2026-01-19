@@ -1,0 +1,23 @@
+FriendSender:
+    userId: Long
+    nickname: String
+    sex: 'male' | 'female' | 'unknown' | null
+    age: Int | null
+
+GroupTempSourceSender:
+    userId: Long
+    nickname: String
+    sex: 'male' | 'female' | 'unknown' | null
+    age: Int | null
+    groupId: Long | null
+
+GroupSender:
+    userId: Long
+    nickname: String
+    sex: Sex | null
+    age: Int | null
+    card: String | null
+    area: String | null
+    level: Int | null
+    role: 'owner' | 'admin' | 'member'
+    title: String | null

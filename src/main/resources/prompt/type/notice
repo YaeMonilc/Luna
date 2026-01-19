@@ -1,0 +1,33 @@
+GroupMsgEmojiLikeEvent:
+    selfId: Long
+    noticeType: 'group_msg_emoji_like'
+    groupId: Long
+    userId: Long
+    likes: List<{
+        emojiId: String
+        count: Int
+    }>
+    isAdd: Boolean
+    messageSeq: String | null
+
+FriendPokeEvent:
+    selfId: Long
+    subType: 'poke'
+    targetId: Long
+    userId: Long
+    senderId: Long
+
+GroupPokeEvent:
+    selfId: Long
+    subType: 'poke'
+    targetId: Long
+    userId: Long
+    groupId: Long
+
+ProfileLikeEvent:
+    selfId: Long
+    noticeType: 'notify'
+    subType: 'profile_like'
+    operatorId: Long
+    operatorNick: String
+    times: Int

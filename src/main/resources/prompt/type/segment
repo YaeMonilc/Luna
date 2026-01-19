@@ -1,0 +1,115 @@
+TextSegment:
+    type: 'text'
+    data:
+        text: String
+
+FaceSegment:
+    type: 'face'
+    data:
+        id: String
+
+ImageSegment:
+    type: 'image'
+    data:
+        file: String
+        type: String | null
+        url: String | null
+        cache: Boolean | null
+        proxy: Boolean | null
+        timeout: Long | null
+
+RecordSegment:
+    type: 'record'
+    data:
+        file: String
+        magic: Boolean | null
+        url: String | null
+        cache: Boolean | null
+        proxy: Boolean | null
+        timeout: Long | null
+
+VideoSegment:
+    type: 'video'
+    data:
+        file: String
+        url: String | null
+        cache: Boolean | null
+        proxy: Boolean | null
+        timeout: Long | null
+
+AtSegment:
+    type: 'at'
+    data:
+        qq: String
+        name: String | null
+
+RpsSegment:
+    type: 'rps'
+
+DiceSegment:
+    type: 'dice'
+
+PokeSegment:
+    type: 'poke'
+    data:
+        type: String
+        id: String
+        name: String | null
+
+AnonymousSegment:
+    type: 'anonymous'
+    data:
+        ignore: Boolean | null
+
+ShareSegment:
+    type: 'share'
+    data:
+        url: String
+        title: String
+        content: String | null
+        image: String | null
+
+ContactSegment:
+    type: 'contact'
+    data:
+        type: 'qq' | 'group'
+        id: String
+
+LocationSegment:
+    type: 'location'
+    data:
+        lat: String
+        lon: String
+        title: String | null
+        content: String | null
+
+MusicSegment:
+    type: 'music'
+    data:
+        type: 'qq' | '163' | 'xm'
+        id: String
+
+ReplySegment:
+    type: 'reply'
+    data:
+        id: String
+
+FileSegment:
+    type: 'file'
+    data:
+        file: String
+
+ForwardSegment:
+    type: 'forward'
+    data:
+        id: String
+
+XmlSegment:
+    type: 'xml'
+    data:
+        data: String
+
+JsonSegment:
+    type: 'json'
+    data:
+        data: String
